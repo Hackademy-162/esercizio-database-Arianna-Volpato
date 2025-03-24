@@ -10,10 +10,10 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"> Chi siamo </a>
+            <a class="nav-link" href="{{route('pippo')}}"> servizi </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"> Contatti </a>
+            <a class="nav-link" href="{{route('contatti')}}"> Contatti </a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
