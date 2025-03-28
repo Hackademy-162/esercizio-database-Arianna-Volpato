@@ -35,7 +35,7 @@ public $Piatticucina = [
 public function homepage() {
     //Vai nel databade e prendi i dati dalla tabella X
     
-        return view('welcome', ['piatticucina'=>$this->Piatticucina]);
+        return view('welcome', ['Piatticucina'=>$this->Piatticucina]);
         }
     
         public function service () {
@@ -48,7 +48,7 @@ public function homepage() {
     
         public function detail($id){
             
-            foreach ($this->piatticucina as $Piatticucina) {
+            foreach ($this->Piatticucina as $Piatticucina) {
                 if ($Piatticucina['id'] == $id) {
                     return view('detail', ['Piatticucina'=>$Piatticucina]);
                 }
@@ -56,3 +56,9 @@ public function homepage() {
             return redirect(route('homepage'));
         }
     }
+
+$newConctact = new Contact();
+$newConctact->mail = $req->input ('mail');
+$newConctact ->userName = $req->input ('userName');
+$newConctact ->message = $req->input ('message');
+$newConctact->save();

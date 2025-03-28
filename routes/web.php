@@ -8,4 +8,7 @@ Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 Route::get('/servizi', [PublicController::class, 'service'])->name('pippo');
 // Contatti
 Route::get('/contattaci', [PublicController::class, 'contact'])->name('contatti');
-Route::post('/contattaci/submit', [PublicController::class, 'contact'])->name('contatti.mail');
+
+// rotta parametrica
+Route::get('/pagina.dettaglio/{id}', [PublicController::class, 'detail'])->name('pagina.dettaglio');
+Route::post('/contattaci/submit',[PublicController::class,'contactMail'])->name('contatti.mail');

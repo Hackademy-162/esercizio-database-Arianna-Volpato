@@ -1,19 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Grazie per averci contattati,</h1>
-    <p>In nostro Costumer Care ti contatterà a breve.</p>
-    <p>Ecco il riepilogo dei tuoi dati:</p>
-    <ul>
-        <li>Il tuo nome è: {{$contact['userName']}}</li>
-        <li>La tua mail è: {{$contact['mail']}}</li>
-        <li>Questo è il tuo messaggio:{{$contact['message']}}</li>
-    </ul>
-</body>
-</html>
+<x-layout title="Contatti">
+    <div class="container mt-5">
+       <div class="row justify-content-center ">
+           <div class="col-12 text-center">
+               <h1>Lascia i tuoi contatti</h1>
+           </div>
+       </div>
+       <div class="row justify-content-center mt-5">
+           <div class="col-12 col-md-6">
+               <form method="POST" action="{{route('contatti.mail')}}">
+                   @csrf
+                   <div class="mb-3">
+                       <label for="exampleInputUser" class="form-label">Nome Utente</label>
+                       <input type="text" class="form-control" id="exampleInputUser" name="userName">
+                   </div>
+                   <div class="mb-3">
+                       <label for="exampleInputEmail1" class="form-label">Indirizzo Email</label>
+                       <input type="email" name="mail" class="form-control" id="exampleInputEmail1" >
+                   </div>
+                   <div class="mb-3">
+                       <label for="textArea" class="form-label">Messaggio</label>
+                       <textarea name="message" id="textArea" cols="30" rows="10" placeholder="Inserisci qui il tuo messaggio" class="form-control"></textarea>
+                   </div>
+                   <button type="submit" class="btn btn-primary">Invia</button>
+               </form>
+           </div>
+       </div>
+   </div>
+</x-layout>
